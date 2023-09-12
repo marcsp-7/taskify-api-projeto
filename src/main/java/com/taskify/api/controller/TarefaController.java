@@ -76,7 +76,8 @@ public class TarefaController {
     }
 
     @GetMapping("/projeto/{idProjeto}/usuario/{idUsuario}")
-    public List<Tarefa> filtrarTarefasPorUsuarioEPorProjeto(@PathVariable("idProjeto") Long idProjeto, @PathVariable("idUsuario") Long idUsuario) {
+    public List<Tarefa> filtrarTarefasPorUsuarioEPorProjeto(@PathVariable("idProjeto") Long idProjeto,
+            @PathVariable("idUsuario") Long idUsuario) {
         return tarefaRepository.findByProjetoAndUsuario(idProjeto, idUsuario);
     }
 

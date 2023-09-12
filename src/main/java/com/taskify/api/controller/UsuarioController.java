@@ -61,7 +61,6 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.OK).body(usuario.get());
 
     }
-        
 
     @PutMapping("/{id}")
     public ResponseEntity<Usuario> atualizarUsuario(@PathVariable("id") Long id, @RequestBody Usuario usuario) {
@@ -102,7 +101,7 @@ public class UsuarioController {
 
         return restTemplate.getForObject(url, Endereco.class);
     }
-                                                                                                    
+
     @PostMapping("/endereco")
     public ResponseEntity<Usuario> salvarEnderecoDoUsuario(@RequestBody EnderecoDTO dto) {
         Optional<Usuario> usuario = usuarioRepository.findById(dto.getIdUsuario());
@@ -115,7 +114,7 @@ public class UsuarioController {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        Endereco endereco =  restTemplate.getForObject(url, Endereco.class);
+        Endereco endereco = restTemplate.getForObject(url, Endereco.class);
 
         if (Objects.nonNull(endereco)) {
             endereco.setNumero(dto.getNumero());
@@ -125,10 +124,7 @@ public class UsuarioController {
 
         return ResponseEntity.ok().body(usuarioRepository.save(usuario.get()));
 
-
     }
-
-
 
     @Autowired
     private UsuarioRepository usuarioRepository;

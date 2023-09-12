@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity(name = "tb_projetos")
 
-
 public class Projeto {
 
     @Id

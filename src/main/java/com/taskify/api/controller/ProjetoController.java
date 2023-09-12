@@ -45,7 +45,6 @@ public class ProjetoController {
             projetoExistente.get().setNome(projeto.getNome());
             projetoExistente.get().setDescricao(projeto.getDescricao());
             projetoExistente.get().setUsuario(projeto.getUsuario());
-            
 
             return projetoRepository.save(projetoExistente.get());
         }
@@ -64,8 +63,6 @@ public class ProjetoController {
     public List<Projeto> obterProjetosDoUsuario(@PathVariable("id") Long id) {
         return projetoRepository.findByUsuario(id);
     }
-
-
 
     @Autowired
     private ProjetoRepository projetoRepository;
